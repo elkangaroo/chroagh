@@ -1,6 +1,8 @@
 chroagh
 =======
 
+[![Join the chat at https://gitter.im/elkangaroo/chroagh](https://badges.gitter.im/elkangaroo/chroagh.svg)](https://gitter.im/elkangaroo/chroagh?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 chroagh is a fork of [crouton](https://github.com/dnschneid/crouton), that
 allows you to run another Linux distribution side by side with Chromium OS.
 
