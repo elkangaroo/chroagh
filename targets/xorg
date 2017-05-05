@@ -191,7 +191,7 @@ if [ -z "$inteldriver" -a -n "$backport" ] && release -eq precise; then
         xterm x11-common xinput
 else
     install xorg $installvideodrivers -- arch=,xserver-xorg-video-all$backport
-    install arch=ttf_dejavu
+    install arch=ttf-dejavu
 fi
 
 # Remove bad video drivers
@@ -226,7 +226,10 @@ if [ -n "$freon" -a -e "$inteldrv" ]; then
     if grep -F -q -a 'getuid0' "$inteldrv" 2>/dev/null; then
         # Hold xserver-xorg-video-intel to make sure that the modification
         # (which may have been made in a previous update) does not get erased.
-        apt-mark hold "$inteldriver"
+        if [ "${DISTROAKA:-"$DISTRO"}" = 'debian' ]; then
+            apt-mark hold "$inteldriver"
+            echo skipping apt-mark
+        fi
     fi
 fi
 
